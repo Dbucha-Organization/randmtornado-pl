@@ -439,8 +439,8 @@ img {
 .search-popup.is-visible {
   opacity: 1;
   visibility: visible;
-  cursor: -webkit-image-set(url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23FFF' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 1x, url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 2x), pointer;
-  cursor: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E"), pointer;
+  cursor: -webkit-image-set(url("data:image/svgxml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23FFF' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 1x, url("data:image/svgxml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E") 2x), pointer;
+  cursor: url("data:image/svgxml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23000' d='M20 1l-1-1-9 9-9-9-1 1 9 9-9 9 1 1 9-9 9 9 1-1-9-9'/%3E%3C/svg%3E"), pointer;
   -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
   -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
   transition: opacity 0.3s 0s, visibility 0s 0s;
@@ -885,6 +885,19 @@ figure.instagram-item img.insta-image {
 @media only screen and (max-width: 501px) {
   #instagram figure.instagram-item {
       width: 100%;
+      position: relative;
+      margin: 0 0 12px;
+      overflow: hidden;
+  }
+  #instagram figure.instagram-item .image-link {
+      display: block;
+  }
+  #instagram figure.instagram-item .btn {
+      position: absolute;
+      left: 8px;
+      right: 8px;
+      bottom: 8px;
+      z-index: 3;
   }
 }
 
@@ -1109,26 +1122,24 @@ text-align: center;
 display: block;
 margin: 0 auto;
 }
-+
-+/* Banner button customization */
 
-+#billboard .banner-content .btn {
-+  border-radius: 25% !important;
-+  background-color: #f0258f;
-+  color: #f0258f;;
-+  transition: background-color 0.3s ease;
-+}
-+#billboard .banner-content .btn:hover {
-+  background-color: var(--dark-color) !important;
-+}
-+
-+/* Banner image hover animation */
-+#billboard .image-holder img {
-+  transition: transform 0.5s ease;
-+}
-+#billboard .image-holder:hover img {
-+  transform: scale(1.05) rotate(2deg);
-+}
+#billboard .banner-content .btn {
+  border-radius: 25% !important;
+  background-color: #f0258f;
+  color: #f0258f;;
+  transition: background-color 0.3s ease;
+}
+#billboard .banner-content .btn:hover {
+  background-color: var(--dark-color) !important;
+}
+
+/* Banner image hover animation */
+#billboard .image-holder img {
+  transition: transform 0.5s ease;
+}
+#billboard .image-holder:hover img {
+  transform: scale(1.05) rotate(2deg);
+}
 
 /* Banner headings white */
 #billboard .banner-content h1 {
